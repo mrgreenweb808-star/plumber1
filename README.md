@@ -1,4 +1,4 @@
-# Larbijay Plumbing — plumbing website demo
+# Afric Dave Construction — plumbing website demo
 
 Open `index.html` directly in your browser, or use your editor's Live Server extension. There are no dependencies or build steps.
 
@@ -11,7 +11,7 @@ All site files and downloaded stock photos are in this folder. The site uses Goo
 - Hero and service photography: `assets/`.
 - Mobile navigation and form behavior: `script.js`.
 
-Business details were supplied by the user: Larbijay Plumbing, 055 957 6435 (+233 55 957 6435), open 24 hours, mobile across Accra, Madina, Weija, Kasoa, Lapaz and Kwabenya. No street address, email address, rating, licence or years of experience was supplied, so none is claimed. Google links open a business-name map search, not a verified direct listing. The form uses a local area field instead of a US ZIP code; email is optional. The contact form remains a demo and does not send or store requests. Call links use the supplied business number.
+Business details supplied by the user: Afric Dave Construction; 054 392 7362 (+233 54 392 7362); open 24 hours; North Legon street Madina, Zongo junction, Accra; serving East Legon and nearby areas. The supplied Google rating is 5.0 from 42 reviews, not a live feed. No individual testimonials, email address, licence or years of experience were supplied. All 20 listed services appear in the expandable service list and quote selector. Google links open a business-name map search, not a verified direct listing. The contact form remains demo-only and does not send or store requests. Call links use the supplied business number.
 
 ## Design and photo sources
 
@@ -28,4 +28,4 @@ Stock images are downloaded from Pexels. License: https://www.pexels.com/license
 | `assets/faucet.jpg` | https://www.pexels.com/photo/10961064/ |
 | `assets/repair.jpg` | https://www.pexels.com/photo/a-person-holding-brown-doorknob-7220892/ — cottonbro studio; unused alternate |
 
-Icons are inline SVG, so no icon library is required. Fictional testimonials have been replaced by a feedback invitation. No customer rating is displayed.
+Icons are inline SVG, so no icon library is required. Fictional testimonials have been replaced by a feedback invitation. The supplied aggregate rating is displayed without invented testimonials.

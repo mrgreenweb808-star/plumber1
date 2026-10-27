@@ -14,6 +14,13 @@
 @media(max-width:360px){.container{width:calc(100% - 30px)}.hero h1{font-size:50px}.nav-phone{font-size:11px}.nav-phone small{display:none}.hero-buttons .button{padding:12px 11px;font-size:10px}.form-row{grid-template-columns:1fr}.hero-rating{gap:7px}.hero-rating strong{display:block;margin:0}.hero-rating small{font-size:8px}}
 .logo .brand-name{color:inherit;display:block;font-size:27px;letter-spacing:-1px;line-height:1}.brand-name small{display:block;font-family:var(--body);font-size:9px;letter-spacing:3.2px;font-weight:600;margin-top:6px}.footer .logo .brand-name{color:#fff}.footer-wordmark{font-size:clamp(105px,18vw,250px)}.review-invitation{display:flex;align-items:center;gap:24px;background:var(--paper);border:1px solid var(--border);border-radius:10px;padding:32px}.review-invitation>.icon{width:36px;height:36px;color:var(--orange)}.review-invitation h3{font-size:22px;margin-bottom:9px}.review-invitation p{font-size:13px}.review-invitation .button{margin-left:auto;flex-shrink:0}.contact-details p{align-items:flex-start}.contact-details .icon{margin-top:3px}.service-body h3{overflow-wrap:break-word}
 @media(max-width:650px){.logo .brand-name{font-size:22px}.brand-name small{font-size:7px;letter-spacing:2.7px}.logo svg{width:27px;height:27px}.review-invitation{flex-direction:column;align-items:flex-start;padding:25px;gap:18px}.review-invitation .button{margin-left:0}.footer-wordmark{font-size:21vw}.nav-wrap{gap:9px}.nav-phone{font-size:12px}.nav-phone small{font-size:5px}}
+.service-catalog{margin-top:28px;border:1px solid var(--border);border-radius:10px;padding:20px 24px;background:var(--paper)}
+.service-catalog summary{cursor:pointer;font-weight:650;font-size:14px;color:var(--ink)}
+.service-catalog summary::marker{color:var(--orange)}
+.service-catalog ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 28px;padding-left:18px;margin-top:20px;font-size:12px;color:var(--muted)}
+.rating-note{font-size:10px!important;margin-top:7px}
+.footer-wordmark{font-size:clamp(85px,15.7vw,215px)}
+@media(max-width:650px){.service-catalog ul{grid-template-columns:1fr}.footer-wordmark{font-size:17vw}.logo .brand-name{font-size:20px}.brand-name small{font-size:6px;letter-spacing:2px}}
 /* Lightweight motion: short entrances, tactile controls, and photo details. */
 .service-image{border-radius:6px;overflow:clip;overflow-clip-margin:20px}
 .service-image>img{transition:transform .65s cubic-bezier(.2,.65,.3,1),filter .65s}
