@@ -14,4 +14,40 @@
 @media(max-width:360px){.container{width:calc(100% - 30px)}.hero h1{font-size:50px}.nav-phone{font-size:11px}.nav-phone small{display:none}.hero-buttons .button{padding:12px 11px;font-size:10px}.form-row{grid-template-columns:1fr}.hero-rating{gap:7px}.hero-rating strong{display:block;margin:0}.hero-rating small{font-size:8px}}
 .logo .brand-name{color:inherit;display:block;font-size:27px;letter-spacing:-1px;line-height:1}.brand-name small{display:block;font-family:var(--body);font-size:9px;letter-spacing:3.2px;font-weight:600;margin-top:6px}.footer .logo .brand-name{color:#fff}.footer-wordmark{font-size:clamp(105px,18vw,250px)}.review-invitation{display:flex;align-items:center;gap:24px;background:var(--paper);border:1px solid var(--border);border-radius:10px;padding:32px}.review-invitation>.icon{width:36px;height:36px;color:var(--orange)}.review-invitation h3{font-size:22px;margin-bottom:9px}.review-invitation p{font-size:13px}.review-invitation .button{margin-left:auto;flex-shrink:0}.contact-details p{align-items:flex-start}.contact-details .icon{margin-top:3px}.service-body h3{overflow-wrap:break-word}
 @media(max-width:650px){.logo .brand-name{font-size:22px}.brand-name small{font-size:7px;letter-spacing:2.7px}.logo svg{width:27px;height:27px}.review-invitation{flex-direction:column;align-items:flex-start;padding:25px;gap:18px}.review-invitation .button{margin-left:0}.footer-wordmark{font-size:21vw}.nav-wrap{gap:9px}.nav-phone{font-size:12px}.nav-phone small{font-size:5px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* Lightweight motion: short entrances, tactile controls, and photo details. */
+.service-image{border-radius:6px;overflow:clip;overflow-clip-margin:20px}
+.service-image>img{transition:transform .65s cubic-bezier(.2,.65,.3,1),filter .65s}
+.button .icon,.text-link .icon,.services-note a .icon{transition:transform .25s ease}
+.main-nav a{position:relative}
+.main-nav a:after{content:'';position:absolute;left:0;right:0;bottom:6px;height:2px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.main-nav a:hover:after,.main-nav a:focus-visible:after{transform:scaleX(1)}
+input,select,textarea{transition:border-color .2s,box-shadow .2s,background .2s}
+input:focus,select:focus,textarea:focus{background:#fff;box-shadow:0 0 0 3px #ff572a14}
+.button:active{transform:translateY(0) scale(.98)}
+.benefit-icon,.service-icon{transition:background .25s,color .25s,box-shadow .25s}
+.service-card:focus-within{box-shadow:0 10px 30px #232b2314}
+@keyframes rise-in{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes hero-settle{from{transform:scale(1.045)}to{transform:scale(1)}}
+@keyframes signal-pulse{0%,100%{box-shadow:0 0 0 4px #ff89671a}50%{box-shadow:0 0 0 8px #ff896700}}
+@keyframes scroll-nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@media(prefers-reduced-motion:no-preference){
+  .animate-in{animation:rise-in .65s cubic-bezier(.2,.65,.3,1) var(--entrance-delay,0ms) backwards}
+  .animate-in:focus-within{animation:none}
+  .hero-image{animation:hero-settle 1.8s ease-out both}
+  .hero-content>.hero-eyebrow{animation:rise-in .65s .05s backwards}
+  .hero-content>h1{animation:rise-in .75s .13s backwards}
+  .hero-description{animation:rise-in .75s .22s backwards}
+  .hero-buttons{animation:rise-in .75s .31s backwards}
+  .hero-rating{animation:rise-in .75s .4s backwards}
+  .hero-buttons:focus-within{animation:none}
+  .hero-eyebrow .live-dot{animation:signal-pulse 1.6s 3}
+  .hero-scroll span:last-child{animation:scroll-nudge 1.5s 3}
+  .form-success:not([hidden]){animation:rise-in .4s ease-out}
+  .main-nav.open{animation:rise-in .22s ease-out}
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .service-card:hover .service-image>img{transform:scale(1.045);filter:saturate(1.08)}
+  .service-card:hover .service-icon,.benefit:hover .benefit-icon{background:var(--orange);color:#fff;box-shadow:0 4px 14px #ff572a25}
+  .button:hover .icon,.text-link:hover .icon,.services-note a:hover .icon{transform:translateX(4px)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.button:hover,.button:active,.service-card:hover,.service-body a:hover .circle-arrow{transform:none}}

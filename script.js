@@ -69,3 +69,33 @@ document.querySelector('#form-reset').addEventListener('click', () => {
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+// Content stays visible if animation APIs or JavaScript are unavailable.
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+const entranceTargets = [...document.querySelectorAll(
+  '.trust-item, .section-heading, .service-card, .feature-photo, .feature-copy, .process, .review-invitation, .contact-copy, .form-card, .footer-top'
+)];
+document.querySelectorAll('.service-grid, .trust-bar').forEach(group => {
+  [...group.children].forEach((item, index) => {
+    item.style.setProperty('--entrance-delay', `${(index % 3) * 80}ms`);
+  });
+});
+let entranceObserver;
+function configureEntrances() {
+  entranceObserver?.disconnect();
+  entranceTargets.forEach(element => element.classList.remove('animate-in'));
+  if (motionPreference.matches || !('IntersectionObserver' in window)) return;
+  entranceObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      // Never hide or move the control a keyboard user is interacting with.
+      if (!entry.target.contains(document.activeElement)) {
+        entry.target.classList.add('animate-in');
+      }
+      entranceObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.08 });
+  entranceTargets.forEach(element => entranceObserver.observe(element));
+}
+configureEntrances();
+motionPreference.addEventListener('change', configureEntrances);
